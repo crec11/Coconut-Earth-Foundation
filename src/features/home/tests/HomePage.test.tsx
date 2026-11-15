@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { HomePage } from '../HomePage';
 
 afterEach(cleanup);
@@ -122,6 +122,30 @@ describe('HomePage', () => {
 
       expect(screen.getByRole('tab', { name: nextTab }).getAttribute('aria-selected')).toBe('true');
     }
+  });
+
+  it('scrolls the mission heading into view when a next card is clicked', () => {
+    render(<HomePage />);
+
+    const headingContainer = screen.getByRole('heading', {
+      name: 'One mission, clearly told.',
+    }).parentElement;
+    expect(headingContainer).not.toBeNull();
+    if (!headingContainer) {
+      return;
+    }
+
+    const scrollIntoView = vi.fn();
+    Object.defineProperty(headingContainer, 'scrollIntoView', {
+      configurable: true,
+      value: scrollIntoView,
+    });
+
+    fireEvent.click(
+      within(screen.getByRole('complementary', { name: 'Continue exploring' })).getByRole('button'),
+    );
+
+    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth', block: 'start' });
   });
 
   it('provides downloads for the one-pager and full slide deck', () => {
