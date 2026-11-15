@@ -109,7 +109,12 @@ describe('HomePage', () => {
       fireEvent.click(screen.getByRole('tab', { name: currentTab }));
 
       const callout = screen.getByRole('complementary', { name: 'Continue exploring' });
+      expect(screen.getByRole('tabpanel').lastElementChild).toBe(callout);
       expect(within(callout).queryByText('CE')).toBeNull();
+      if (currentTab === 'Overview') {
+        expect(within(callout).getByText('Next: Our approach')).toBeDefined();
+        expect(within(callout).getByText(/three stages of the proposed model/)).toBeDefined();
+      }
       fireEvent.click(within(callout).getByRole('button'));
 
       expect(screen.getByRole('tab', { name: nextTab }).getAttribute('aria-selected')).toBe('true');

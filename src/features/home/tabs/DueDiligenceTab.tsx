@@ -1,5 +1,6 @@
 import { Disclosure } from '../components/Disclosure';
 import { TabIntro } from '../components/TabIntro';
+import { TabNavigation } from '../components/TabNavigation';
 import type { HomeTabId } from '../homeTabs';
 
 interface DueDiligenceTabProps {
@@ -12,11 +13,6 @@ export function DueDiligenceTab({ onSelectTab }: DueDiligenceTabProps) {
       <TabIntro
         eyebrow="Safety, evidence, and responsible funding"
         lead="Responsible funding decisions depend on independent testing and a clear distinction between established facts and questions that remain open."
-        nextAction="Open downloads"
-        nextDescription="Review the one-pager and full presentation for additional detail on the mission and proposed work."
-        nextEyebrow="Next: Downloads"
-        nextTab="downloads"
-        onSelectTab={onSelectTab}
         title="Funding decisions should account for evidence, risks, and open questions."
       />
       <div className="caution-card">
@@ -92,6 +88,13 @@ export function DueDiligenceTab({ onSelectTab }: DueDiligenceTabProps) {
       <button className="primary-button" type="button" onClick={() => onSelectTab('support')}>
         Review funding priorities
       </button>
+      <TabNavigation
+        nextAction="Open downloads"
+        nextDescription="Review the one-pager and full presentation for additional detail on the mission and proposed work."
+        nextEyebrow="Next: Downloads"
+        nextTab="downloads"
+        onSelectTab={onSelectTab}
+      />
     </>
   );
 }

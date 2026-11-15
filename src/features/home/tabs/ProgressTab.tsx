@@ -1,5 +1,6 @@
 import { Disclosure } from '../components/Disclosure';
 import { TabIntro } from '../components/TabIntro';
+import { TabNavigation } from '../components/TabNavigation';
 import type { HomeTabId } from '../homeTabs';
 
 const progressItems = [
@@ -33,11 +34,6 @@ export function ProgressTab({ onSelectTab }: ProgressTabProps) {
       <TabIntro
         eyebrow="Current activity and plans"
         lead="Construction and testing are reported to be underway in Thailand, while California greenhouse, nursery, and restoration work remains proposed. The status labels distinguish reported activity from future plans."
-        nextAction="Explore impact measures"
-        nextDescription="The impact section outlines proposed measures and the verification needed to support future claims."
-        nextEyebrow="Next: Impact"
-        nextTab="impact"
-        onSelectTab={onSelectTab}
         title="The program includes reported activity and proposals that have not yet begun."
       />
       <div className="progress-grid">
@@ -62,6 +58,13 @@ export function ProgressTab({ onSelectTab }: ProgressTabProps) {
           to be established.
         </p>
       </Disclosure>
+      <TabNavigation
+        nextAction="Explore impact measures"
+        nextDescription="The impact section outlines proposed measures and the verification needed to support future claims."
+        nextEyebrow="Next: Impact"
+        nextTab="impact"
+        onSelectTab={onSelectTab}
+      />
     </>
   );
 }

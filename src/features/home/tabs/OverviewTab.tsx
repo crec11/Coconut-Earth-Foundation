@@ -2,6 +2,7 @@ import captainBrittPhoto from '../../../assets/captain-britt.jpg';
 import skipperEricPhoto from '../../../assets/skipper-eric.jpg';
 import { Disclosure } from '../components/Disclosure';
 import { TabIntro } from '../components/TabIntro';
+import { TabNavigation } from '../components/TabNavigation';
 import type { HomeTabId } from '../homeTabs';
 
 interface OverviewTabProps {
@@ -14,11 +15,6 @@ export function OverviewTab({ onSelectTab }: OverviewTabProps) {
       <TabIntro
         eyebrow="Our mission"
         lead="The Foundation aims to reduce pressure on forests by recovering discarded coconut shells, testing soil and tree-restoration approaches, and sharing evidence that communities and businesses can adapt."
-        nextAction="See the three-step approach"
-        nextDescription="The model begins with local recovery and a Thailand demonstration; any expansion will depend on documented results, costs, and local conditions."
-        nextEyebrow="Starting in Thailand"
-        nextTab="approach"
-        onSelectTab={onSelectTab}
         title="A model designed for careful evaluation and local adaptation."
       >
         <p className="purpose-copy">
@@ -61,6 +57,13 @@ export function OverviewTab({ onSelectTab }: OverviewTabProps) {
           incoming support is intended to advance program work.
         </p>
       </Disclosure>
+      <TabNavigation
+        nextAction="Review the approach"
+        nextDescription="The next section explains the three stages of the proposed model, beginning with local shell recovery in Thailand."
+        nextEyebrow="Next: Our approach"
+        nextTab="approach"
+        onSelectTab={onSelectTab}
+      />
     </>
   );
 }

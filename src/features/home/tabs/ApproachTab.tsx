@@ -1,6 +1,7 @@
 import factoryProductionConcept from '../../../assets/factory-production-concept.jpg';
 import { Disclosure } from '../components/Disclosure';
 import { TabIntro } from '../components/TabIntro';
+import { TabNavigation } from '../components/TabNavigation';
 import type { HomeTabId } from '../homeTabs';
 
 const approachSteps = [
@@ -34,11 +35,6 @@ export function ApproachTab({ onSelectTab }: ApproachTabProps) {
       <TabIntro
         eyebrow="How the work comes together"
         lead="The Foundation intends to begin with local collection partnerships and expand only after operating, safety, and financial performance are documented."
-        nextAction="View current progress"
-        nextDescription="Review reported activity in Thailand and distinguish it from proposals that have not yet begun."
-        nextEyebrow="Next: Progress"
-        nextTab="progress"
-        onSelectTab={onSelectTab}
         title="The proposed model has three stages, with expansion based on results."
       />
       <div className="step-grid">
@@ -95,6 +91,13 @@ export function ApproachTab({ onSelectTab }: ApproachTabProps) {
           adapted to local needs, infrastructure, and regulations.
         </p>
       </Disclosure>
+      <TabNavigation
+        nextAction="View current progress"
+        nextDescription="Review reported activity in Thailand and distinguish it from proposals that have not yet begun."
+        nextEyebrow="Next: Progress"
+        nextTab="progress"
+        onSelectTab={onSelectTab}
+      />
     </>
   );
 }

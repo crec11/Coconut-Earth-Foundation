@@ -208,6 +208,11 @@
   max-width: 49rem;
 }
 
+.tab-intro-copy .panel-intro,
+.tab-intro-copy .panel-lead {
+  max-width: none;
+}
+
 .panel-intro .eyebrow {
   margin-bottom: 0.55rem;
 }
@@ -218,13 +223,6 @@
   color: var(--body);
   font-size: 1rem;
   line-height: 1.7;
-}
-
-.tab-intro-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(15rem, 0.8fr);
-  align-items: center;
-  gap: clamp(2rem, 5vw, 4.5rem);
 }
 
 .tab-intro-copy {
@@ -238,6 +236,8 @@
 }
 
 .tab-navigation-card {
+  width: 100%;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
   padding: 1.5rem;
   border: 1px solid var(--line);
   border-left: 4px solid var(--pink);
@@ -818,7 +818,6 @@
     gap: 0.65rem;
   }
 
-  .tab-intro-layout,
   .step-grid,
   .support-grid,
   .download-grid {

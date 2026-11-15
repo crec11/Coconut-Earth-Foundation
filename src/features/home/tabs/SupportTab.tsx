@@ -1,5 +1,6 @@
 import { Disclosure } from '../components/Disclosure';
 import { TabIntro } from '../components/TabIntro';
+import { TabNavigation } from '../components/TabNavigation';
 import type { HomeTabId } from '../homeTabs';
 
 const supportAreas = [
@@ -35,11 +36,6 @@ export function SupportTab({ onSelectTab }: SupportTabProps) {
       <TabIntro
         eyebrow="Potential funding priorities"
         lead="Funding could support pilot work, independent testing, and transparent reporting; expansion would depend on the results."
-        nextAction="Review due diligence"
-        nextDescription="Review the safety, evidence, and contribution considerations before committing funds."
-        nextEyebrow="Next: Due diligence"
-        nextTab="due-diligence"
-        onSelectTab={onSelectTab}
         title="Funding priorities are tied to evidence."
       />
       <div className="support-grid">
@@ -102,6 +98,13 @@ export function SupportTab({ onSelectTab }: SupportTabProps) {
           may help others adapt or improve it.
         </p>
       </div>
+      <TabNavigation
+        nextAction="Review due diligence"
+        nextDescription="Review the safety, evidence, and contribution considerations before committing funds."
+        nextEyebrow="Next: Due diligence"
+        nextTab="due-diligence"
+        onSelectTab={onSelectTab}
+      />
     </>
   );
 }

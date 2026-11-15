@@ -1,5 +1,6 @@
 import { Disclosure } from '../components/Disclosure';
 import { TabIntro } from '../components/TabIntro';
+import { TabNavigation } from '../components/TabNavigation';
 import type { HomeTabId } from '../homeTabs';
 
 const impactMeasures = [
@@ -19,11 +20,6 @@ export function ImpactTab({ onSelectTab }: ImpactTabProps) {
       <TabIntro
         eyebrow="How we will measure success"
         lead="The Foundation intends to report verified results rather than projected outcomes, with measures developed as the work advances."
-        nextAction="Review funding priorities"
-        nextDescription="The funding section explains how prospective contributions could support evidence and measured progress."
-        nextEyebrow="Next: Support"
-        nextTab="support"
-        onSelectTab={onSelectTab}
         title="Results should be measurable and verifiable."
       />
       <ul className="measure-grid">
@@ -71,6 +67,13 @@ export function ImpactTab({ onSelectTab }: ImpactTabProps) {
           survival before expansion is considered.
         </p>
       </Disclosure>
+      <TabNavigation
+        nextAction="Review funding priorities"
+        nextDescription="The funding section explains how prospective contributions could support evidence and measured progress."
+        nextEyebrow="Next: Support"
+        nextTab="support"
+        onSelectTab={onSelectTab}
+      />
     </>
   );
 }
