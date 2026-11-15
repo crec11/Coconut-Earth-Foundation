@@ -5,19 +5,23 @@ import type { HomeTabId } from '../homeTabs';
 const supportAreas = [
   {
     title: 'Independent science',
-    description: 'Test fuel performance, factory emissions, and safe use.',
+    description:
+      'Independent testing can assess fuel performance, factory emissions, and safe use before claims are made.',
   },
   {
     title: 'Community partnerships',
-    description: 'Support shell collection, fair local jobs, and education.',
+    description:
+      'Funding could support shell-collection partnerships, fair local employment, and community education.',
   },
   {
     title: 'Forest and soil restoration',
-    description: 'Run practical restoration pilots and track their results.',
+    description:
+      'Funding could support restoration pilots with measurable outcomes and follow-up monitoring.',
   },
   {
     title: 'Open documentation',
-    description: 'Share lessons so others can adapt and improve the approach.',
+    description:
+      'Open reporting could help communities and other operators assess and adapt the approach.',
   },
 ];
 
@@ -29,14 +33,14 @@ export function SupportTab({ onSelectTab }: SupportTabProps) {
   return (
     <>
       <TabIntro
-        eyebrow="Where donor support can help"
-        lead="Support can help turn a promising model into a tested, transparent, and locally useful approach."
+        eyebrow="Potential funding priorities"
+        lead="Funding could support pilot work, independent testing, and transparent reporting; expansion would depend on the results."
         nextAction="Review due diligence"
-        nextDescription="Review health, safety, and giving considerations before contributing."
+        nextDescription="Review the safety, evidence, and contribution considerations before committing funds."
         nextEyebrow="Next: Due diligence"
         nextTab="due-diligence"
         onSelectTab={onSelectTab}
-        title="Fund the work that builds trust."
+        title="Funding priorities are tied to evidence."
       />
       <div className="support-grid">
         {supportAreas.map((area) => (
@@ -49,48 +53,53 @@ export function SupportTab({ onSelectTab }: SupportTabProps) {
           </article>
         ))}
       </div>
-      <Disclosure summary="The first proposed donor program">
+      <Disclosure summary="Proposed initial funding stage">
         <p>
-          Begin with local consultation, a shell-supply and logistics assessment, a costed pilot
-          plan, and an independent research design. Scope and budget each stage before funds are
-          committed.
+          Initial funding could support local consultation, a shell-supply and logistics assessment,
+          a costed pilot plan, and an independent research design. Each stage should have a defined
+          scope and budget before funds are committed.
         </p>
       </Disclosure>
       <Disclosure summary="Later activities and separate campaigns">
         <p>
-          Collection programs, training, environmental monitoring, and restoration work would follow
-          review and approval of the first pilot. Headquarters projects and expedition vessels are
-          separate initiatives with their own scopes, budgets, and approvals.
+          Collection programs, training, environmental monitoring, and restoration work would
+          proceed only after the first pilot has been reviewed and approved. Headquarters projects
+          and expedition vessels are separate initiatives, each requiring its own scope, budget, and
+          approvals.
         </p>
         <p>
-          A proposed charcoal-assistance program would first document community need, eligible
-          households, budgets, distribution logistics, and recipient guidance. Cooking safety and
-          ventilation must be assessed; charcoal should not be presented as clean cooking.
+          Any proposed charcoal-assistance program should first document community need, eligible
+          households, budgets, distribution logistics, and recipient guidance. The program would
+          need to assess cooking safety and ventilation; charcoal should not be presented as clean
+          cooking.
         </p>
         <p>
-          An initial 90–120 foot vessel is proposed, with an indicative purchase target of
-          $500,000–$1 million; a larger 150–200 foot vessel is a future concept. Any purchase would
-          require an independent survey, confirmed mission need, qualified crew, safety review,
+          The current proposal identifies an initial 90–120-foot vessel with an indicative purchase
+          target of $500,000–$1 million; a larger 150–200-foot vessel remains a future concept.
+          These figures are proposals, not confirmed acquisition plans. Any purchase would require
+          an independent survey, a documented mission need, a qualified crew, a safety review,
           insurance, and a separate operating budget. Expedition places are not guaranteed.
         </p>
       </Disclosure>
       <Disclosure summary="Governance and supporter reporting">
         <p>
           Proposed safeguards include written responsibilities, independent oversight, conflict
-          reviews, approved budgets, restricted-gift records, and expenditure approvals. Confirm the
-          organization&apos;s current governance and donation arrangements before contributing.
+          reviews, approved budgets, restricted-contribution records, and expenditure approvals.
+          Prospective funders should verify the Foundation&apos;s current governance and
+          contribution arrangements before committing funds.
         </p>
         <p>
-          Proposed supporter reports include shell weights, participant payments, paid local roles,
-          processing yields, delivery reliability, research findings, restored area, and tree
-          survival—along with limitations and next steps.
+          Proposed supporter reports would document shell weights, participant payments, paid local
+          roles, processing yields, delivery reliability, research findings, restored area, and tree
+          survival, together with limitations and next steps.
         </p>
       </Disclosure>
       <div className="partner-callout">
         <p className="eyebrow">An invitation to partner</p>
         <p>
-          Ask Coconut Earth Foundation for a project-specific scope, budget, timeline, and reporting
-          plan. The goal is to demonstrate a better model—and help others improve upon it.
+          Prospective funders can request a project-specific scope, budget, timeline, and reporting
+          plan before making a commitment. The objective is to test a model and share evidence that
+          may help others adapt or improve it.
         </p>
       </div>
     </>

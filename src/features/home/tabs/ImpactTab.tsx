@@ -3,10 +3,10 @@ import { TabIntro } from '../components/TabIntro';
 import type { HomeTabId } from '../homeTabs';
 
 const impactMeasures = [
-  'Shells recovered',
-  'Trees restored',
-  'Local participation',
-  'Verified emissions and safety',
+  'Shell recovery would be reported by weight and processing yield.',
+  'Restoration reporting would track trees planted and their survival over time.',
+  'Reports would document local participation, paid roles, and payments.',
+  'Independent testing would be required to substantiate emissions and safety results.',
 ];
 
 interface ImpactTabProps {
@@ -18,13 +18,13 @@ export function ImpactTab({ onSelectTab }: ImpactTabProps) {
     <>
       <TabIntro
         eyebrow="How we will measure success"
-        lead="We focus on practical measures, not promised outcomes. We will document results as the work advances."
-        nextAction="Explore donor support"
-        nextDescription="See where donor support can help build evidence and progress."
+        lead="The Foundation intends to report verified results rather than projected outcomes, with measures developed as the work advances."
+        nextAction="Review funding priorities"
+        nextDescription="The funding section explains how prospective contributions could support evidence and measured progress."
         nextEyebrow="Next: Support"
         nextTab="support"
         onSelectTab={onSelectTab}
-        title="Progress should be verifiable."
+        title="Results should be measurable and verifiable."
       />
       <ul className="measure-grid">
         {impactMeasures.map((measure, index) => (
@@ -35,39 +35,40 @@ export function ImpactTab({ onSelectTab }: ImpactTabProps) {
         ))}
       </ul>
       <p className="impact-detail">
-        Evaluation can also track wood demand potentially displaced, jobs and community
-        participation, tree survival, restored land, and household exposure outcomes.
+        Depending on the pilot design and available data, evaluation may also examine potential wood
+        demand displaced, local employment, restored land, tree survival, and household exposure.
+        These indicators would require defined baselines and appropriate verification.
       </p>
       <Disclosure summary="Independent evidence and reporting plan">
         <ul>
           <li>
-            Trace shell origins, seasonality, competing uses, collection, transport, and processing
-            yield.
+            The supply-chain assessment would document shell origins and seasonality, competing
+            uses, collection and transport methods, and processing yields.
           </li>
           <li>
-            Record operating conditions, energy use, emissions, and worker exposure from collection
-            through finished fuel.
+            Operational monitoring would record conditions, energy use, emissions, and worker
+            exposure from collection through finished fuel.
           </li>
           <li>
-            Compare performance and lifecycle impacts with a documented baseline through qualified
-            independent partners.
+            Qualified independent partners would compare performance and lifecycle impacts with a
+            documented baseline.
           </li>
           <li>
-            Report methods, spending, participation, payments, yields, restoration results,
-            limitations, and the basis for decisions to continue or expand.
+            Supporter reports would disclose methods, spending, participation, payments, yields,
+            restoration results, limitations, and the rationale for decisions to continue or expand.
           </li>
         </ul>
       </Disclosure>
       <Disclosure summary="Restoration and research safeguards">
         <p>
-          Proposed nursery and soil pilots could study tree growth and survival, coconut genetics,
-          and climate adaptation. Research findings and successful adaptations are not yet
-          established.
+          Proposed nursery and soil pilots could examine tree growth and survival, coconut genetics,
+          and climate adaptation. The research findings and any successful adaptations have not yet
+          been established.
         </p>
         <p>
-          Planting plans should be developed with willing local partners on suitable land, with land
-          rights, habitat, water needs, maintenance, and long-term tree survival considered before
-          expansion.
+          Any planting plan should be developed with willing local partners on suitable land. It
+          should account for land rights, habitat, water needs, maintenance, and long-term tree
+          survival before expansion is considered.
         </p>
       </Disclosure>
     </>

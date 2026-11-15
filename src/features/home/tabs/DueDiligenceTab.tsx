@@ -10,14 +10,14 @@ export function DueDiligenceTab({ onSelectTab }: DueDiligenceTabProps) {
   return (
     <>
       <TabIntro
-        eyebrow="Safety, evidence, and responsible giving"
-        lead="Responsible progress depends on independent testing and clear expectations about what is known—and what still needs to be established."
+        eyebrow="Safety, evidence, and responsible funding"
+        lead="Responsible funding decisions depend on independent testing and a clear distinction between established facts and questions that remain open."
         nextAction="Open downloads"
-        nextDescription="Access the one-pager and full slide deck for more detail."
+        nextDescription="Review the one-pager and full presentation for additional detail on the mission and proposed work."
         nextEyebrow="Next: Downloads"
         nextTab="downloads"
         onSelectTab={onSelectTab}
-        title="Good questions belong in the plan."
+        title="Funding decisions should account for evidence, risks, and open questions."
       />
       <div className="caution-card">
         <span className="caution-icon" aria-hidden="true">
@@ -32,20 +32,20 @@ export function DueDiligenceTab({ onSelectTab }: DueDiligenceTabProps) {
         </div>
       </div>
       <p className="due-diligence-note">
-        Before contributing, confirm the receiving entity, donation terms, and any tax deductibility
-        directly with the appropriate organization or adviser.
+        Before committing funds, verify the receiving entity, contribution terms, and any tax
+        treatment directly with the Foundation or an appropriate adviser.
       </p>
       <Disclosure summary="Charcoal, indoor air, and health claims">
         <p>
           Coconut-shell charcoal remains charcoal: burning it can produce carbon monoxide and
-          harmful particulate pollution. Do not recommend burning charcoal indoors or in enclosed
-          spaces without equipment specifically approved and properly vented for that use.
+          harmful particulate pollution. Indoor use should not be considered unless equipment is
+          specifically approved and properly vented for that use.
         </p>
         <p>
-          Heat, burn time, efficiency, and emissions claims require independent, comparable testing.
-          Testing should consider carbon monoxide, particulate matter, other relevant pollutants,
-          sourcing, drying, transport, factory energy, and end use. Coconut charcoal is not
-          automatically a clean cooking fuel.
+          Claims about heat, burn time, efficiency, and emissions require independent, comparable
+          testing. Testing should consider carbon monoxide, particulate matter, other relevant
+          pollutants, sourcing, drying, transport, factory energy, and end use. Coconut-shell
+          feedstock alone does not substantiate a clean-cooking claim.
         </p>
       </Disclosure>
       <Disclosure summary="Public-health context and sources">
@@ -87,10 +87,10 @@ export function DueDiligenceTab({ onSelectTab }: DueDiligenceTabProps) {
         </ul>
       </Disclosure>
       <p className="tax-status-note">
-        Tax-exempt status and donation deductibility have not been confirmed.
+        Tax-exempt status and the deductibility of contributions have not been confirmed.
       </p>
       <button className="primary-button" type="button" onClick={() => onSelectTab('support')}>
-        Explore where support can help
+        Review funding priorities
       </button>
     </>
   );

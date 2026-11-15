@@ -8,19 +8,19 @@ const approachSteps = [
     number: '01',
     title: 'Recover',
     description:
-      'Work with local partners to collect and prepare discarded coconut shells, with fair payments and traceable records.',
+      'The proposed recovery stage would work with local partners to collect and prepare discarded coconut shells, with fair payments and traceable records.',
   },
   {
     number: '02',
     title: 'Demonstrate',
     description:
-      'Develop the Thailand eco-factory model, including gas-handling and recovery systems now being built and tested.',
+      'The Thailand eco-factory is in development, including gas-handling and recovery systems that require further testing.',
   },
   {
     number: '03',
     title: 'Replicate',
     description:
-      'Measure safety and performance, then share useful results for local adaptation in other countries.',
+      'Further locations would be considered only after safety, operating performance, and costs are documented, with each model adapted to local conditions.',
   },
 ];
 
@@ -33,13 +33,13 @@ export function ApproachTab({ onSelectTab }: ApproachTabProps) {
     <>
       <TabIntro
         eyebrow="How the work comes together"
-        lead="The work starts with local partnerships and earns the right to scale through evidence, safety, and transparent learning."
+        lead="The Foundation intends to begin with local collection partnerships and expand only after operating, safety, and financial performance are documented."
         nextAction="View current progress"
-        nextDescription="See what is underway in Thailand and which activities remain planned."
+        nextDescription="Review reported activity in Thailand and distinguish it from proposals that have not yet begun."
         nextEyebrow="Next: Progress"
         nextTab="progress"
         onSelectTab={onSelectTab}
-        title="Recover. Demonstrate. Replicate."
+        title="The proposed model has three stages, with expansion based on results."
       />
       <div className="step-grid">
         {approachSteps.map((step) => (
@@ -52,28 +52,28 @@ export function ApproachTab({ onSelectTab }: ApproachTabProps) {
       </div>
       <Disclosure summary="Community collection pilot">
         <p>
-          The proposed pilot prioritizes fallen or discarded coconuts, respects existing local uses,
-          and records where material comes from. Whole coconuts, husks, fiber, and hard shells would
-          be sorted separately and checked for moisture and quality.
+          The proposed pilot would prioritize fallen or discarded coconuts, respect existing local
+          uses, and record material origins. Whole coconuts, husks, fiber, and hard shells would be
+          sorted separately and checked for moisture and quality.
         </p>
         <p>
           Local stations could use published acceptance rules, weighing records, receipts, and
           prompt payment. The pilot would compare island processing with a shared hub and assess
-          equipment, staffing, electricity, maintenance, storage, and full transport cost. A
-          proposed barge route would be compared with other freight options; pickup timing would
-          depend on actual volumes, port access, weather, and cost.
+          equipment, staffing, electricity, maintenance, storage, and total transport costs. A
+          proposed barge route would be compared with other freight options, with pickup timing
+          based on actual volumes, port access, weather, and cost.
         </p>
       </Disclosure>
       <Disclosure summary="Factory production concept">
         <p>
-          The proposed process covers receiving and storing shells, carbonizing them in a sealed
-          retort, cooling and crushing, screening, mixing binder, pressing briquettes, controlled
-          drying, quality checks, and packaging.
+          The proposed process would include receiving and storing shells, carbonizing them in a
+          sealed retort, cooling and crushing, screening, mixing binder, pressing briquettes,
+          controlled drying, quality checks, and packaging.
         </p>
         <p>
-          Gas capture and reuse for process heat are goals to assess—not verified outcomes. Final
-          equipment, fire separation, dust protection, permits, and emissions controls require local
-          engineering and testing.
+          Gas capture and reuse for process heat are objectives for testing, not verified outcomes.
+          Final equipment, fire separation, dust protection, permits, and emissions controls require
+          local engineering and testing.
         </p>
         <figure className="concept-figure">
           <img
@@ -82,16 +82,17 @@ export function ApproachTab({ onSelectTab }: ApproachTabProps) {
             src={factoryProductionConcept}
           />
           <figcaption>
-            Illustrative production layout, not a photograph of an operating facility. Final sizing,
-            fire separation, dust protection, and permits require local engineering.
+            This illustration is a proposed production layout, not a photograph of an operating
+            facility. Final sizing, fire separation, dust protection, and permits require local
+            engineering.
           </figcaption>
         </figure>
       </Disclosure>
       <Disclosure summary="When to expand">
         <p>
-          Add locations only after a costed pilot establishes workable supply, community
-          participation, receiving capacity, and operating results. Adapt each location to local
-          needs, infrastructure, and rules.
+          Expansion should proceed only after a costed pilot establishes workable supply, community
+          participation, receiving capacity, and operating results. Each location would need to be
+          adapted to local needs, infrastructure, and regulations.
         </p>
       </Disclosure>
     </>

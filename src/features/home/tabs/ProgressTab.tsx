@@ -7,19 +7,19 @@ const progressItems = [
     status: 'In development',
     title: 'Thailand eco-factory',
     description:
-      'The Thailand factory is part of this self-funded mission. Its operating model and current readiness need confirmation as the program develops.',
+      "The factory forms part of the Foundation's self-funded mission. Its current operating arrangements and readiness for production require confirmation.",
   },
   {
     status: 'In progress',
     title: 'Gas handling and recovery',
     description:
-      'Construction and testing are underway. Commissioning status and independent emissions results still need confirmation.',
+      'Construction and testing are reported to be underway. The current commissioning status and independent emissions results require confirmation.',
   },
   {
     status: 'Proposed',
     title: 'California research and restoration',
     description:
-      'Greenhouse, nursery, soil-study, and restoration plans remain subject to site feasibility, approvals, and program budgets.',
+      'Plans for a greenhouse, nursery, soil studies, and restoration remain proposals that depend on site feasibility, approvals, and program budgets.',
   },
 ];
 
@@ -32,13 +32,13 @@ export function ProgressTab({ onSelectTab }: ProgressTabProps) {
     <>
       <TabIntro
         eyebrow="Current activity and plans"
-        lead="Construction and testing are underway in Thailand; California greenhouse, nursery, and restoration work remains proposed. Status labels distinguish active work from plans."
+        lead="Construction and testing are reported to be underway in Thailand, while California greenhouse, nursery, and restoration work remains proposed. The status labels distinguish reported activity from future plans."
         nextAction="Explore impact measures"
-        nextDescription="Learn what the project will measure and how results will be verified."
+        nextDescription="The impact section outlines proposed measures and the verification needed to support future claims."
         nextEyebrow="Next: Impact"
         nextTab="impact"
         onSelectTab={onSelectTab}
-        title="See what is underway—and what is still planned."
+        title="The program includes reported activity and proposals that have not yet begun."
       />
       <div className="progress-grid">
         {progressItems.map((item) => (
@@ -51,13 +51,15 @@ export function ProgressTab({ onSelectTab }: ProgressTabProps) {
       </div>
       <Disclosure summary="California site status needs confirmation">
         <p>
-          Ownership and lease descriptions for the California base differ. Confirm current property
-          status and terms before making a public or donor-facing property or funding claim.
+          Descriptions of the California site's ownership and lease status differ. Confirmation of
+          the site's current status and terms is required before any public statement or funding
+          decision relies on the property.
         </p>
         <p>
-          Proposed site uses include a greenhouse of about 2,000 square feet, nursery and soil
-          studies, restoration trials, meetings, and research coordination. Feasibility, water,
-          access, permitted uses, operating costs, and approvals need confirmation.
+          The proposed site could accommodate a greenhouse of about 2,000 square feet, nursery and
+          soil studies, restoration trials, meetings, and research coordination. Its feasibility,
+          water supply, access, permitted uses, operating costs, and required approvals still need
+          to be established.
         </p>
       </Disclosure>
     </>

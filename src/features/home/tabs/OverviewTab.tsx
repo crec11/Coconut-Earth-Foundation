@@ -13,17 +13,18 @@ export function OverviewTab({ onSelectTab }: OverviewTabProps) {
     <>
       <TabIntro
         eyebrow="Our mission"
-        lead="Reduce pressure on forests by recovering discarded coconut shells, advancing soil and tree-restoration efforts, and sharing practical lessons communities and businesses can adapt around the world."
+        lead="The Foundation aims to reduce pressure on forests by recovering discarded coconut shells, testing soil and tree-restoration approaches, and sharing evidence that communities and businesses can adapt."
         nextAction="See the three-step approach"
-        nextDescription="A self-funded initiative focused on practical recovery, careful testing, and responsible global replication."
+        nextDescription="The model begins with local recovery and a Thailand demonstration; any expansion will depend on documented results, costs, and local conditions."
         nextEyebrow="Starting in Thailand"
         nextTab="approach"
         onSelectTab={onSelectTab}
-        title="A practical mission, built to be shared."
+        title="A model designed for careful evaluation and local adaptation."
       >
         <p className="purpose-copy">
-          <strong>Our purpose.</strong> Demonstrate a responsible, measurable model in Thailand and
-          make the useful lessons available for local adaptation elsewhere.
+          <strong>Initial objective.</strong> The Foundation intends to test a responsible,
+          measurable model in Thailand and publish lessons that could inform local adaptation
+          elsewhere.
         </p>
       </TabIntro>
       <Disclosure summary="Meet the founding team">
@@ -38,8 +39,8 @@ export function OverviewTab({ onSelectTab }: OverviewTabProps) {
               <p className="eyebrow">Co-founder</p>
               <h3>Captain Britt Reynolds</h3>
               <p>
-                Brings international relationships and hands-on product experience to the founding
-                team.
+                Captain Britt Reynolds contributes international relationships and hands-on product
+                experience to the founding team.
               </p>
             </div>
           </article>
@@ -48,13 +49,16 @@ export function OverviewTab({ onSelectTab }: OverviewTabProps) {
             <div className="founder-copy">
               <p className="eyebrow">Co-founder</p>
               <h3>Skipper Eric James Leitzke</h3>
-              <p>Brings investment and operations experience to Coconut Earth Foundation.</p>
+              <p>
+                Skipper Eric James Leitzke contributes investment and operations experience to
+                Coconut Earth Foundation.
+              </p>
             </div>
           </article>
         </div>
         <p className="founder-note">
-          This is a self-funded mission. The majority of incoming support is intended to advance it
-          under approved budgets.
+          The mission is currently self-funded. Subject to approved budgets, the majority of
+          incoming support is intended to advance program work.
         </p>
       </Disclosure>
     </>

@@ -9,12 +9,15 @@ describe('HomePage', () => {
     render(<HomePage />);
 
     expect(
-      screen.getByRole('heading', { level: 1, name: 'Protect forests. Share what works.' }),
+      screen.getByRole('heading', {
+        level: 1,
+        name: 'The Foundation is developing a measurable model for coconut-shell recovery.',
+      }),
     ).toBeDefined();
     expect(screen.getByRole('tab', { name: 'Overview' }).getAttribute('aria-selected')).toBe(
       'true',
     );
-    expect(screen.getByText(/Reduce pressure on forests/)).toBeDefined();
+    expect(screen.getByText(/reduce pressure on forests/i)).toBeDefined();
   });
 
   it('places the creator credit at the bottom of the footer', () => {
@@ -34,7 +37,11 @@ describe('HomePage', () => {
 
     fireEvent.click(screen.getByRole('tab', { name: 'Our approach' }));
 
-    expect(screen.getByRole('heading', { name: 'Recover. Demonstrate. Replicate.' })).toBeDefined();
+    expect(
+      screen.getByRole('heading', {
+        name: 'The proposed model has three stages, with expansion based on results.',
+      }),
+    ).toBeDefined();
 
     const approachTab = screen.getByRole('tab', { name: 'Our approach' });
     fireEvent.keyDown(approachTab, { key: 'ArrowRight' });
@@ -44,15 +51,19 @@ describe('HomePage', () => {
     expect(document.activeElement).toBe(progressTab);
     expect(
       screen.getByRole('heading', {
-        name: 'See what is underway—and what is still planned.',
+        name: 'The program includes reported activity and proposals that have not yet begun.',
       }),
     ).toBeDefined();
     expect(
-      screen.getByText(/The Thailand factory is part of this self-funded mission/),
+      screen.getByText(/The factory forms part of the Foundation's self-funded mission/),
     ).toBeDefined();
 
     fireEvent.keyDown(progressTab, { key: 'ArrowRight' });
-    expect(screen.getByText(/We focus on practical measures, not promised outcomes/)).toBeDefined();
+    expect(
+      screen.getByText(
+        /The Foundation intends to report verified results rather than projected outcomes/,
+      ),
+    ).toBeDefined();
   });
 
   it('supports Home and End keyboard shortcuts in the tab list', () => {
@@ -68,6 +79,19 @@ describe('HomePage', () => {
     fireEvent.keyDown(downloadsTab, { key: 'Home' });
     expect(overviewTab.getAttribute('aria-selected')).toBe('true');
     expect(document.activeElement).toBe(overviewTab);
+  });
+
+  it('states that California property terms need confirmation before funding claims', () => {
+    render(<HomePage />);
+
+    fireEvent.click(screen.getByRole('tab', { name: 'Progress' }));
+    fireEvent.click(screen.getByText('California site status needs confirmation'));
+
+    expect(
+      screen.getByText(
+        /Confirmation of the site's current status and terms is required before any public statement or funding decision relies on the property/,
+      ),
+    ).toBeDefined();
   });
 
   it('shows a next-tab callout on each content tab and navigates to the next section', () => {
@@ -121,7 +145,7 @@ describe('HomePage', () => {
     fireEvent.click(screen.getByRole('tab', { name: 'Our approach' }));
     fireEvent.click(screen.getByText('Community collection pilot'));
 
-    expect(screen.getByText(/prioritizes fallen or discarded coconuts/)).toBeDefined();
+    expect(screen.getByText(/prioritize fallen or discarded coconuts/)).toBeDefined();
     expect(
       screen.getByText(/published acceptance rules, weighing records, receipts/),
     ).toBeDefined();
@@ -150,7 +174,9 @@ describe('HomePage', () => {
     expect(captainPhoto.closest('article')).not.toBe(skipperPhoto.closest('article'));
     expect(screen.getByRole('heading', { name: 'Captain Britt Reynolds' })).toBeDefined();
     expect(screen.getByRole('heading', { name: 'Skipper Eric James Leitzke' })).toBeDefined();
-    expect(screen.getByText(/This is a self-funded mission/)).toBeDefined();
+    expect(screen.getByText(/majority of incoming support/).textContent).toMatch(
+      /^The mission is currently self-funded/,
+    );
   });
 
   it('shows health and donation caveats with source links', () => {
@@ -166,7 +192,9 @@ describe('HomePage', () => {
         .getAttribute('href'),
     ).toBe('https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health');
     expect(
-      screen.getByText(/Tax-exempt status and donation deductibility have not been confirmed/),
+      screen.getByText(
+        /Tax-exempt status and the deductibility of contributions have not been confirmed/,
+      ),
     ).toBeDefined();
   });
 });
