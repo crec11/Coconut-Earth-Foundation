@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Tabs } from '../../components/ui/Tabs';
 import { ApproachTab } from './tabs/ApproachTab';
 import { DueDiligenceTab } from './tabs/DueDiligenceTab';
+import { DownloadsTab } from './tabs/DownloadsTab';
 import { ImpactTab } from './tabs/ImpactTab';
 import { OverviewTab } from './tabs/OverviewTab';
 import { ProgressTab } from './tabs/ProgressTab';
@@ -22,6 +23,7 @@ export function HomeInformation({ activeTab, onSelectTab }: HomeInformationProps
     impact: <ImpactTab />,
     support: <SupportTab />,
     'due-diligence': <DueDiligenceTab onSelectTab={onSelectTab} />,
+    downloads: <DownloadsTab />,
   };
 
   return (

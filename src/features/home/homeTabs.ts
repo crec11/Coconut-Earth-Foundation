@@ -7,6 +7,7 @@ export const homeTabs = [
   { id: 'impact', label: 'Impact' },
   { id: 'support', label: 'Support' },
   { id: 'due-diligence', label: 'Due diligence' },
+  { id: 'downloads', label: 'Downloads' },
 ] as const satisfies readonly TabItem<string>[];
 
 export type HomeTabId = (typeof homeTabs)[number]['id'];

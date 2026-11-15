@@ -61,13 +61,29 @@ describe('HomePage', () => {
     const overviewTab = screen.getByRole('tab', { name: 'Overview' });
     fireEvent.keyDown(overviewTab, { key: 'End' });
 
-    const dueDiligenceTab = screen.getByRole('tab', { name: 'Due diligence' });
-    expect(dueDiligenceTab.getAttribute('aria-selected')).toBe('true');
-    expect(document.activeElement).toBe(dueDiligenceTab);
+    const downloadsTab = screen.getByRole('tab', { name: 'Downloads' });
+    expect(downloadsTab.getAttribute('aria-selected')).toBe('true');
+    expect(document.activeElement).toBe(downloadsTab);
 
-    fireEvent.keyDown(dueDiligenceTab, { key: 'Home' });
+    fireEvent.keyDown(downloadsTab, { key: 'Home' });
     expect(overviewTab.getAttribute('aria-selected')).toBe('true');
     expect(document.activeElement).toBe(overviewTab);
+  });
+
+  it('provides downloads for the one-pager and full slide deck', () => {
+    render(<HomePage />);
+
+    fireEvent.click(screen.getByRole('tab', { name: 'Downloads' }));
+
+    const onePagerLink = screen.getByRole('link', { name: 'Download One-pager PDF' });
+    const slideDeckLink = screen.getByRole('link', { name: 'Download Full slide deck PDF' });
+
+    expect(onePagerLink.getAttribute('download')).toBe('coconut-earth-foundation-one-pager.pdf');
+    expect(onePagerLink.getAttribute('href')).toBeTruthy();
+    expect(slideDeckLink.getAttribute('download')).toBe(
+      'coconut-earth-foundation-full-slide-deck.pdf',
+    );
+    expect(slideDeckLink.getAttribute('href')).toBeTruthy();
   });
 
   it('reveals operational detail progressively within a tab', () => {
