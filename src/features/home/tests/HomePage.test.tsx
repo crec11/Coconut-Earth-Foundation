@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 import { HomePage } from '../HomePage';
 
@@ -70,10 +70,34 @@ describe('HomePage', () => {
     expect(document.activeElement).toBe(overviewTab);
   });
 
+  it('shows a next-tab callout on each content tab and navigates to the next section', () => {
+    render(<HomePage />);
+
+    const tabFlow = [
+      ['Overview', 'Our approach'],
+      ['Our approach', 'Progress'],
+      ['Progress', 'Impact'],
+      ['Impact', 'Support'],
+      ['Support', 'Due diligence'],
+      ['Due diligence', 'Downloads'],
+    ];
+
+    for (const [currentTab, nextTab] of tabFlow) {
+      fireEvent.click(screen.getByRole('tab', { name: currentTab }));
+
+      const callout = screen.getByRole('complementary', { name: 'Continue exploring' });
+      fireEvent.click(within(callout).getByRole('button'));
+
+      expect(screen.getByRole('tab', { name: nextTab }).getAttribute('aria-selected')).toBe('true');
+    }
+  });
+
   it('provides downloads for the one-pager and full slide deck', () => {
     render(<HomePage />);
 
     fireEvent.click(screen.getByRole('tab', { name: 'Downloads' }));
+
+    expect(screen.queryByRole('complementary', { name: 'Continue exploring' })).toBeNull();
 
     const onePagerLink = screen.getByRole('link', { name: 'Download One-pager PDF' });
     const slideDeckLink = screen.getByRole('link', { name: 'Download Full slide deck PDF' });

@@ -18,10 +18,10 @@ interface HomeInformationProps {
 export function HomeInformation({ activeTab, onSelectTab }: HomeInformationProps) {
   const tabPanels: Record<HomeTabId, ReactNode> = {
     overview: <OverviewTab onSelectTab={onSelectTab} />,
-    approach: <ApproachTab />,
-    progress: <ProgressTab />,
-    impact: <ImpactTab />,
-    support: <SupportTab />,
+    approach: <ApproachTab onSelectTab={onSelectTab} />,
+    progress: <ProgressTab onSelectTab={onSelectTab} />,
+    impact: <ImpactTab onSelectTab={onSelectTab} />,
+    support: <SupportTab onSelectTab={onSelectTab} />,
     'due-diligence': <DueDiligenceTab onSelectTab={onSelectTab} />,
     downloads: <DownloadsTab />,
   };

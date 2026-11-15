@@ -1,5 +1,6 @@
 import { Disclosure } from '../components/Disclosure';
-import { PanelIntro } from '../components/PanelIntro';
+import { TabIntro } from '../components/TabIntro';
+import type { HomeTabId } from '../homeTabs';
 
 const supportAreas = [
   {
@@ -20,13 +21,23 @@ const supportAreas = [
   },
 ];
 
-export function SupportTab() {
+interface SupportTabProps {
+  onSelectTab: (tab: HomeTabId) => void;
+}
+
+export function SupportTab({ onSelectTab }: SupportTabProps) {
   return (
     <>
-      <PanelIntro eyebrow="Where donor support can help" title="Fund the work that builds trust.">
-        Support can help turn a promising model into a tested, transparent, and locally useful
-        approach.
-      </PanelIntro>
+      <TabIntro
+        eyebrow="Where donor support can help"
+        lead="Support can help turn a promising model into a tested, transparent, and locally useful approach."
+        nextAction="Review due diligence"
+        nextDescription="Review health, safety, and giving considerations before contributing."
+        nextEyebrow="Next: Due diligence"
+        nextTab="due-diligence"
+        onSelectTab={onSelectTab}
+        title="Fund the work that builds trust."
+      />
       <div className="support-grid">
         {supportAreas.map((area) => (
           <article className="support-card" key={area.title}>

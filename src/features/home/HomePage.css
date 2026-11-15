@@ -220,11 +220,15 @@
   line-height: 1.7;
 }
 
-.overview-layout {
+.tab-intro-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(15rem, 0.8fr);
   align-items: center;
   gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.tab-intro-copy {
+  min-width: 0;
 }
 
 .purpose-copy {
@@ -233,7 +237,7 @@
   line-height: 1.7;
 }
 
-.overview-note {
+.tab-navigation-card {
   padding: 1.5rem;
   border-radius: 0.4rem;
   background: var(--sage);
@@ -253,11 +257,11 @@
   letter-spacing: 0.06em;
 }
 
-.overview-note .eyebrow {
+.tab-navigation-card .eyebrow {
   margin-bottom: 0.5rem;
 }
 
-.overview-note > p:not(.eyebrow) {
+.tab-navigation-card > p:not(.eyebrow) {
   margin: 0;
   color: var(--body);
   line-height: 1.6;
@@ -653,14 +657,9 @@
 }
 
 .partner-callout > p:last-child {
-  max-width: 56rem;
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.65;
-}
-
-.due-diligence-layout {
-  max-width: 54rem;
 }
 
 .caution-card {
@@ -821,7 +820,7 @@
     gap: 0.65rem;
   }
 
-  .overview-layout,
+  .tab-intro-layout,
   .step-grid,
   .support-grid,
   .download-grid {

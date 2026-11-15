@@ -1,5 +1,6 @@
 import { Disclosure } from '../components/Disclosure';
-import { PanelIntro } from '../components/PanelIntro';
+import { TabIntro } from '../components/TabIntro';
+import type { HomeTabId } from '../homeTabs';
 
 const progressItems = [
   {
@@ -22,16 +23,23 @@ const progressItems = [
   },
 ];
 
-export function ProgressTab() {
+interface ProgressTabProps {
+  onSelectTab: (tab: HomeTabId) => void;
+}
+
+export function ProgressTab({ onSelectTab }: ProgressTabProps) {
   return (
     <>
-      <PanelIntro
+      <TabIntro
         eyebrow="Current activity and plans"
+        lead="Construction and testing are underway in Thailand; California greenhouse, nursery, and restoration work remains proposed. Status labels distinguish active work from plans."
+        nextAction="Explore impact measures"
+        nextDescription="Learn what the project will measure and how results will be verified."
+        nextEyebrow="Next: Impact"
+        nextTab="impact"
+        onSelectTab={onSelectTab}
         title="See what is underway—and what is still planned."
-      >
-        Construction and testing are underway in Thailand; California greenhouse, nursery, and
-        restoration work remains proposed. Status labels distinguish active work from plans.
-      </PanelIntro>
+      />
       <div className="progress-grid">
         {progressItems.map((item) => (
           <article className="progress-card" key={item.title}>

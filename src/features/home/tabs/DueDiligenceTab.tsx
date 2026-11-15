@@ -1,5 +1,5 @@
 import { Disclosure } from '../components/Disclosure';
-import { PanelIntro } from '../components/PanelIntro';
+import { TabIntro } from '../components/TabIntro';
 import type { HomeTabId } from '../homeTabs';
 
 interface DueDiligenceTabProps {
@@ -8,14 +8,17 @@ interface DueDiligenceTabProps {
 
 export function DueDiligenceTab({ onSelectTab }: DueDiligenceTabProps) {
   return (
-    <div className="due-diligence-layout">
-      <PanelIntro
+    <>
+      <TabIntro
         eyebrow="Safety, evidence, and responsible giving"
+        lead="Responsible progress depends on independent testing and clear expectations about what is known—and what still needs to be established."
+        nextAction="Open downloads"
+        nextDescription="Access the one-pager and full slide deck for more detail."
+        nextEyebrow="Next: Downloads"
+        nextTab="downloads"
+        onSelectTab={onSelectTab}
         title="Good questions belong in the plan."
-      >
-        Responsible progress depends on independent testing and clear expectations about what is
-        known—and what still needs to be established.
-      </PanelIntro>
+      />
       <div className="caution-card">
         <span className="caution-icon" aria-hidden="true">
           !
@@ -89,6 +92,6 @@ export function DueDiligenceTab({ onSelectTab }: DueDiligenceTabProps) {
       <button className="primary-button" type="button" onClick={() => onSelectTab('support')}>
         Explore where support can help
       </button>
-    </div>
+    </>
   );
 }

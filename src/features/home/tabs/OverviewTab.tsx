@@ -1,7 +1,7 @@
 import captainBrittPhoto from '../../../assets/captain-britt.jpg';
 import skipperEricPhoto from '../../../assets/skipper-eric.jpg';
 import { Disclosure } from '../components/Disclosure';
-import { PanelIntro } from '../components/PanelIntro';
+import { TabIntro } from '../components/TabIntro';
 import type { HomeTabId } from '../homeTabs';
 
 interface OverviewTabProps {
@@ -11,32 +11,21 @@ interface OverviewTabProps {
 export function OverviewTab({ onSelectTab }: OverviewTabProps) {
   return (
     <>
-      <div className="overview-layout">
-        <div>
-          <PanelIntro eyebrow="Our mission" title="A practical mission, built to be shared.">
-            Reduce pressure on forests by recovering discarded coconut shells, advancing soil and
-            tree-restoration efforts, and sharing practical lessons communities and businesses can
-            adapt around the world.
-          </PanelIntro>
-          <p className="purpose-copy">
-            <strong>Our purpose.</strong> Demonstrate a responsible, measurable model in Thailand
-            and make the useful lessons available for local adaptation elsewhere.
-          </p>
-        </div>
-        <aside className="overview-note">
-          <span className="note-mark" aria-hidden="true">
-            CE
-          </span>
-          <p className="eyebrow">Starting in Thailand</p>
-          <p>
-            A self-funded initiative focused on practical recovery, careful testing, and responsible
-            global replication.
-          </p>
-          <button className="text-button" type="button" onClick={() => onSelectTab('approach')}>
-            See the three-step approach <span aria-hidden="true">→</span>
-          </button>
-        </aside>
-      </div>
+      <TabIntro
+        eyebrow="Our mission"
+        lead="Reduce pressure on forests by recovering discarded coconut shells, advancing soil and tree-restoration efforts, and sharing practical lessons communities and businesses can adapt around the world."
+        nextAction="See the three-step approach"
+        nextDescription="A self-funded initiative focused on practical recovery, careful testing, and responsible global replication."
+        nextEyebrow="Starting in Thailand"
+        nextTab="approach"
+        onSelectTab={onSelectTab}
+        title="A practical mission, built to be shared."
+      >
+        <p className="purpose-copy">
+          <strong>Our purpose.</strong> Demonstrate a responsible, measurable model in Thailand and
+          make the useful lessons available for local adaptation elsewhere.
+        </p>
+      </TabIntro>
       <Disclosure summary="Meet the founding team">
         <div className="founder-grid">
           <article className="founder-card">

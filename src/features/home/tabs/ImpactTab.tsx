@@ -1,5 +1,6 @@
 import { Disclosure } from '../components/Disclosure';
-import { PanelIntro } from '../components/PanelIntro';
+import { TabIntro } from '../components/TabIntro';
+import type { HomeTabId } from '../homeTabs';
 
 const impactMeasures = [
   'Shells recovered',
@@ -8,13 +9,23 @@ const impactMeasures = [
   'Verified emissions and safety',
 ];
 
-export function ImpactTab() {
+interface ImpactTabProps {
+  onSelectTab: (tab: HomeTabId) => void;
+}
+
+export function ImpactTab({ onSelectTab }: ImpactTabProps) {
   return (
     <>
-      <PanelIntro eyebrow="How we will measure success" title="Progress should be verifiable.">
-        We focus on practical measures, not promised outcomes. We will document results as the work
-        advances.
-      </PanelIntro>
+      <TabIntro
+        eyebrow="How we will measure success"
+        lead="We focus on practical measures, not promised outcomes. We will document results as the work advances."
+        nextAction="Explore donor support"
+        nextDescription="See where donor support can help build evidence and progress."
+        nextEyebrow="Next: Support"
+        nextTab="support"
+        onSelectTab={onSelectTab}
+        title="Progress should be verifiable."
+      />
       <ul className="measure-grid">
         {impactMeasures.map((measure, index) => (
           <li className="measure-card" key={measure}>

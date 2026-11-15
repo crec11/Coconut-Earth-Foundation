@@ -1,6 +1,7 @@
 import factoryProductionConcept from '../../../assets/factory-production-concept.jpg';
 import { Disclosure } from '../components/Disclosure';
-import { PanelIntro } from '../components/PanelIntro';
+import { TabIntro } from '../components/TabIntro';
+import type { HomeTabId } from '../homeTabs';
 
 const approachSteps = [
   {
@@ -23,13 +24,23 @@ const approachSteps = [
   },
 ];
 
-export function ApproachTab() {
+interface ApproachTabProps {
+  onSelectTab: (tab: HomeTabId) => void;
+}
+
+export function ApproachTab({ onSelectTab }: ApproachTabProps) {
   return (
     <>
-      <PanelIntro eyebrow="How the work comes together" title="Recover. Demonstrate. Replicate.">
-        The work starts with local partnerships and earns the right to scale through evidence,
-        safety, and transparent learning.
-      </PanelIntro>
+      <TabIntro
+        eyebrow="How the work comes together"
+        lead="The work starts with local partnerships and earns the right to scale through evidence, safety, and transparent learning."
+        nextAction="View current progress"
+        nextDescription="See what is underway in Thailand and which activities remain planned."
+        nextEyebrow="Next: Progress"
+        nextTab="progress"
+        onSelectTab={onSelectTab}
+        title="Recover. Demonstrate. Replicate."
+      />
       <div className="step-grid">
         {approachSteps.map((step) => (
           <article className="step-card" key={step.number}>
