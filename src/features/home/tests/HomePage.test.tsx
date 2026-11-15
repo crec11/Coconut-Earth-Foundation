@@ -79,11 +79,15 @@ describe('HomePage', () => {
     const slideDeckLink = screen.getByRole('link', { name: 'Download Full slide deck PDF' });
 
     expect(onePagerLink.getAttribute('download')).toBe('coconut-earth-foundation-one-pager.pdf');
-    expect(onePagerLink.getAttribute('href')).toBeTruthy();
+    expect(onePagerLink.getAttribute('href')).toBe(
+      'https://github.com/crec11/Coconut-Earth-Foundation/raw/refs/heads/feature/break-out-into-features/docs/pdf/CEF_Donor_One_Page_Key_Points.pdf',
+    );
     expect(slideDeckLink.getAttribute('download')).toBe(
       'coconut-earth-foundation-full-slide-deck.pdf',
     );
-    expect(slideDeckLink.getAttribute('href')).toBeTruthy();
+    expect(slideDeckLink.getAttribute('href')).toBe(
+      'https://github.com/crec11/Coconut-Earth-Foundation/raw/refs/heads/feature/break-out-into-features/docs/pdf/CEF_Donor_Full_Presentation.pdf',
+    );
   });
 
   it('reveals operational detail progressively within a tab', () => {
