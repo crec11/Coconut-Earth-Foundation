@@ -8,7 +8,15 @@
     'Segoe UI',
     sans-serif;
   color: #172033;
-  background: #ffffff;
+  background: #f7f8f3;
+  --forest: #123f31;
+  --forest-soft: #315d4d;
+  --pink: #efa8bf;
+  --paper: #f8f7ef;
+  --sage: #e8eee7;
+  --body: #30463c;
+  --muted: #64756c;
+  --line: #dce4dc;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,14 +31,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  background: #f7f8f3;
 }
 
 #root {
   min-height: 100vh;
-}
-
-main {
-  max-width: 72rem;
-  margin-inline: auto;
-  padding: 2rem;
 }
