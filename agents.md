@@ -15,7 +15,6 @@ Use a feature-oriented structure for the React application. Keep shared applicat
 
 ```text
 .
-├── public/                 # Static files copied as-is
 ├── src/
 │   ├── app/                # App shell, routing, and top-level providers
 │   ├── assets/             # Imported images, fonts, and other assets
@@ -38,6 +37,7 @@ Use a feature-oriented structure for the React application. Keep shared applicat
 
 - Keep feature-specific components and logic inside that feature's directory; promote code to shared folders only when it is genuinely reused.
 - Keep tests in a dedicated `tests/` subdirectory within the feature or code area they cover (for example, `src/features/profile/tests/ProfileCard.test.tsx`). Do not put tests beside the application source files or in one repository-wide test directory.
+- Import static assets from `src/assets/` so Vite can inline them into the single-file production build; do not add files to a Vite `public/` directory.
 - Keep Vite, TypeScript, ESLint, and package-manager configuration at the repository root.
 
 ## Website Design Guidelines
