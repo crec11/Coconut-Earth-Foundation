@@ -8,12 +8,11 @@ describe('HomePage', () => {
   it('renders the mission and starts on the overview tab', () => {
     render(<HomePage />);
 
-    expect(
-      screen.getByRole('heading', {
-        level: 1,
-        name: 'The Foundation is developing a measurable model for coconut-shell recovery.',
-      }),
-    ).toBeDefined();
+    const heroHeading = screen.getByRole('heading', {
+      level: 1,
+      name: /Protect forests\. ?Share what works\./,
+    });
+    expect(heroHeading.querySelector('br')).not.toBeNull();
     expect(screen.getByRole('tab', { name: 'Overview' }).getAttribute('aria-selected')).toBe(
       'true',
     );

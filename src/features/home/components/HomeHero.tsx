@@ -10,7 +10,9 @@ export function HomeHero({ onSupportClick }: HomeHeroProps) {
       <div className="hero-copy">
         <p className="hero-kicker">A practical, self-funded mission</p>
         <h1 id="hero-title">
-          Protect forests. <br/><span>Share what works.</span>
+          Protect forests.
+          <br />
+          <span>Share what works.</span>
         </h1>
         <p className="hero-description">
           Starting in Thailand and built for responsible global replication.
