@@ -20,6 +20,11 @@ describe('HomePage', () => {
   it('switches sections using click and arrow-key navigation', () => {
     render(<HomePage />);
 
+    const overviewTab = screen.getByRole('tab', { name: 'Overview' });
+    expect(overviewTab.getAttribute('aria-controls')).toBe(
+      screen.getByRole('tabpanel').getAttribute('id'),
+    );
+
     fireEvent.click(screen.getByRole('tab', { name: 'Our approach' }));
 
     expect(screen.getByRole('heading', { name: 'Recover. Demonstrate. Replicate.' })).toBeDefined();
@@ -41,6 +46,21 @@ describe('HomePage', () => {
 
     fireEvent.keyDown(progressTab, { key: 'ArrowRight' });
     expect(screen.getByText(/We focus on practical measures, not promised outcomes/)).toBeDefined();
+  });
+
+  it('supports Home and End keyboard shortcuts in the tab list', () => {
+    render(<HomePage />);
+
+    const overviewTab = screen.getByRole('tab', { name: 'Overview' });
+    fireEvent.keyDown(overviewTab, { key: 'End' });
+
+    const dueDiligenceTab = screen.getByRole('tab', { name: 'Due diligence' });
+    expect(dueDiligenceTab.getAttribute('aria-selected')).toBe('true');
+    expect(document.activeElement).toBe(dueDiligenceTab);
+
+    fireEvent.keyDown(dueDiligenceTab, { key: 'Home' });
+    expect(overviewTab.getAttribute('aria-selected')).toBe('true');
+    expect(document.activeElement).toBe(overviewTab);
   });
 
   it('reveals operational detail progressively within a tab', () => {

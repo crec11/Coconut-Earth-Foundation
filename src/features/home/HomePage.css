@@ -132,7 +132,6 @@
 .primary-button:focus-visible,
 .text-button:focus-visible,
 .footer-link:focus-visible,
-.tab-button:focus-visible,
 .brand:focus-visible {
   outline: 3px solid var(--pink);
   outline-offset: 3px;
@@ -203,56 +202,6 @@
   margin: 0 0 0.15rem;
   color: var(--muted);
   line-height: 1.6;
-}
-
-.tab-list {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 0.35rem;
-  padding: 0.4rem;
-  border: 1px solid var(--line);
-  border-radius: 0.35rem;
-  background: #ffffff;
-}
-
-.tab-button {
-  min-height: 2.9rem;
-  padding: 0.65rem 0.8rem;
-  border: 0;
-  border-radius: 0.2rem;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.86rem;
-  font-weight: 700;
-  transition:
-    background-color 160ms ease,
-    color 160ms ease;
-}
-
-.tab-button:hover {
-  background: var(--sage);
-  color: var(--forest);
-}
-
-.tab-button[aria-selected='true'] {
-  background: var(--forest);
-  color: #ffffff;
-}
-
-.tab-panel {
-  min-height: 21rem;
-  margin-top: 1rem;
-  padding: clamp(1.5rem, 4vw, 3rem);
-  border: 1px solid var(--line);
-  border-radius: 0.45rem;
-  background: #ffffff;
-}
-
-.tab-panel:focus-visible {
-  outline: 3px solid var(--forest-soft);
-  outline-offset: 3px;
 }
 
 .panel-intro {
@@ -728,10 +677,6 @@
 }
 
 @media (max-width: 900px) {
-  .tab-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .hero {
     min-height: 24rem;
   }
@@ -792,15 +737,6 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 0.65rem;
-  }
-
-  .tab-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .tab-button {
-    padding-inline: 0.45rem;
-    font-size: 0.8rem;
   }
 
   .overview-layout,
