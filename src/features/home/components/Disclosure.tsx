@@ -7,7 +7,7 @@ interface DisclosureProps {
 
 export function Disclosure({ children, summary }: DisclosureProps) {
   return (
-    <details className="detail-disclosure">
+    <details className="detail-disclosure" open>
       <summary>{summary}</summary>
       <div className="disclosure-content">{children}</div>
     </details>

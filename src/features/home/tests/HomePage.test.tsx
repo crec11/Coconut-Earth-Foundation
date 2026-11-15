@@ -84,7 +84,9 @@ describe('HomePage', () => {
     render(<HomePage />);
 
     fireEvent.click(screen.getByRole('tab', { name: 'Progress' }));
-    fireEvent.click(screen.getByText('California site status needs confirmation'));
+    expect(
+      screen.getByText('California site status needs confirmation').closest('details')?.open,
+    ).toBe(true);
 
     expect(
       screen.getByText(
@@ -143,11 +145,11 @@ describe('HomePage', () => {
     );
   });
 
-  it('reveals operational detail progressively within a tab', () => {
+  it('shows operational details expanded by default', () => {
     render(<HomePage />);
 
     fireEvent.click(screen.getByRole('tab', { name: 'Our approach' }));
-    fireEvent.click(screen.getByText('Community collection pilot'));
+    expect(screen.getByText('Community collection pilot').closest('details')?.open).toBe(true);
 
     expect(screen.getByText(/prioritize fallen or discarded coconuts/)).toBeDefined();
     expect(
@@ -159,7 +161,6 @@ describe('HomePage', () => {
     render(<HomePage />);
 
     fireEvent.click(screen.getByRole('tab', { name: 'Our approach' }));
-    fireEvent.click(screen.getByText('Factory production concept'));
 
     expect(
       screen.getByRole('img', { name: /Illustrative layout of a small coconut-shell charcoal/ }),
@@ -169,8 +170,6 @@ describe('HomePage', () => {
 
   it('shows each founder in a separate photo profile', () => {
     render(<HomePage />);
-
-    fireEvent.click(screen.getByText('Meet the founding team'));
 
     const captainPhoto = screen.getByRole('img', { name: /Captain Britt Reynolds/ });
     const skipperPhoto = screen.getByRole('img', { name: /Skipper Eric James Leitzke/ });
@@ -187,7 +186,6 @@ describe('HomePage', () => {
     render(<HomePage />);
 
     fireEvent.click(screen.getByRole('tab', { name: 'Due diligence' }));
-    fireEvent.click(screen.getByText('Public-health context and sources'));
 
     expect(screen.getByText(/not evidence of Coconut Earth Foundation outcomes/)).toBeDefined();
     expect(
@@ -200,5 +198,24 @@ describe('HomePage', () => {
         /Tax-exempt status and the deductibility of contributions have not been confirmed/,
       ),
     ).toBeDefined();
+  });
+
+  it('opens expandable sections by default on every content tab', () => {
+    render(<HomePage />);
+
+    for (const tabName of [
+      'Overview',
+      'Our approach',
+      'Progress',
+      'Impact',
+      'Support',
+      'Due diligence',
+    ]) {
+      fireEvent.click(screen.getByRole('tab', { name: tabName }));
+
+      const disclosures = screen.getByRole('tabpanel').querySelectorAll('details');
+      expect(disclosures.length).toBeGreaterThan(0);
+      disclosures.forEach((disclosure) => expect(disclosure.open).toBe(true));
+    }
   });
 });
