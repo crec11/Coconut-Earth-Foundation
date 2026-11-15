@@ -17,6 +17,13 @@ describe('HomePage', () => {
     expect(screen.getByText(/Reduce pressure on forests/)).toBeDefined();
   });
 
+  it('places the creator credit at the bottom of the footer', () => {
+    render(<HomePage />);
+
+    const footer = screen.getByRole('contentinfo');
+    expect(footer.lastElementChild?.textContent).toBe('Website created by Chris Crellin.');
+  });
+
   it('switches sections using click and arrow-key navigation', () => {
     render(<HomePage />);
 
