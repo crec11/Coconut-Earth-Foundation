@@ -1,7 +1,7 @@
 # Coconut Earth Foundation
 
-React and TypeScript application built with Vite. The production build is a single,
-self-contained HTML file written to `dist/index.html`.
+React and TypeScript application built with Vite. Vite uses `src/index.html` as its entry point.
+The production build is a single, self-contained `index.html` written to the project root.
 
 ## Getting started
 
@@ -22,4 +22,4 @@ yarn typecheck
 yarn build
 ```
 
-`yarn build` type-checks the app and creates the single-file production build in `dist/`.
+`yarn build` type-checks the app and writes the single-file production build to the project root.

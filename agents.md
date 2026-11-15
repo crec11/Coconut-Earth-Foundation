@@ -16,6 +16,7 @@ Use a feature-oriented structure for the React application. Keep shared applicat
 ```text
 .
 ├── src/
+│   ├── index.html         # Vite HTML entry point
 │   ├── app/                # App shell, routing, and top-level providers
 │   ├── assets/             # Imported images, fonts, and other assets
 │   ├── components/
@@ -27,7 +28,7 @@ Use a feature-oriented structure for the React application. Keep shared applicat
 │   ├── styles/             # Global styles, theme, and design tokens
 │   ├── App.tsx             # Root React component
 │   └── main.tsx            # Browser entry point
-├── index.html              # Vite HTML entry point
+├── index.html              # Generated single-file production build (ignored)
 ├── vite.config.ts
 ├── eslint.config.js
 ├── package.json

@@ -3,6 +3,7 @@ node_modules/
 .pnp.*
 
 # Build and test output
+/index.html
 coverage/
 .vite/
 *.tsbuildinfo
