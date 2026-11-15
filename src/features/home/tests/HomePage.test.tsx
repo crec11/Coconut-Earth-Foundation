@@ -86,6 +86,7 @@ describe('HomePage', () => {
       fireEvent.click(screen.getByRole('tab', { name: currentTab }));
 
       const callout = screen.getByRole('complementary', { name: 'Continue exploring' });
+      expect(within(callout).queryByText('CE')).toBeNull();
       fireEvent.click(within(callout).getByRole('button'));
 
       expect(screen.getByRole('tab', { name: nextTab }).getAttribute('aria-selected')).toBe('true');

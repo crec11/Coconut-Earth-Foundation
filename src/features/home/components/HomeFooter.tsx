@@ -14,7 +14,7 @@ export function HomeFooter({ onDueDiligenceClick }: HomeFooterProps) {
           Read the safety and due diligence notes <span aria-hidden="true">→</span>
         </button>
       </div>
-      <p className="site-credit">Website created by Chris Crellin.</p>
+      <p className="site-credit">Website designed by Chris Crellin.</p>
     </footer>
   );
 }

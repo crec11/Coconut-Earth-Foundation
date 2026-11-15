@@ -34,9 +34,6 @@ export function TabIntro({
         {children}
       </div>
       <aside aria-label="Continue exploring" className="tab-navigation-card">
-        <span className="note-mark" aria-hidden="true">
-          CE
-        </span>
         <p className="eyebrow">{nextEyebrow}</p>
         <p>{nextDescription}</p>
         <button className="text-button" type="button" onClick={() => onSelectTab(nextTab)}>

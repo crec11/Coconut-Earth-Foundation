@@ -239,32 +239,30 @@
 
 .tab-navigation-card {
   padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--pink);
   border-radius: 0.4rem;
   background: var(--sage);
-}
-
-.note-mark {
-  display: grid;
-  width: 2.7rem;
-  height: 2.7rem;
-  margin-bottom: 1.2rem;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--forest);
-  color: var(--pink);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  box-shadow: 0 0.5rem 1.25rem rgb(18 63 49 / 8%);
 }
 
 .tab-navigation-card .eyebrow {
   margin-bottom: 0.5rem;
+  color: var(--forest-soft);
 }
 
 .tab-navigation-card > p:not(.eyebrow) {
   margin: 0;
   color: var(--body);
   line-height: 1.6;
+}
+
+.tab-navigation-card .text-button {
+  color: var(--forest);
+}
+
+.tab-navigation-card .text-button:hover {
+  color: var(--forest-soft);
 }
 
 .detail-disclosure {
