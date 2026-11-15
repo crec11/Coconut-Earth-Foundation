@@ -32,9 +32,15 @@ describe('HomePage', () => {
     expect(document.activeElement).toBe(progressTab);
     expect(
       screen.getByRole('heading', {
-        name: 'Separate what is reported from what is proposed.',
+        name: 'See what is underway—and what is still planned.',
       }),
     ).toBeDefined();
+    expect(
+      screen.getByText(/The Thailand factory is part of this self-funded mission/),
+    ).toBeDefined();
+
+    fireEvent.keyDown(progressTab, { key: 'ArrowRight' });
+    expect(screen.getByText(/We focus on practical measures, not promised outcomes/)).toBeDefined();
   });
 
   it('reveals operational detail progressively within a tab', () => {
@@ -72,6 +78,7 @@ describe('HomePage', () => {
     expect(captainPhoto.closest('article')).not.toBe(skipperPhoto.closest('article'));
     expect(screen.getByRole('heading', { name: 'Captain Britt Reynolds' })).toBeDefined();
     expect(screen.getByRole('heading', { name: 'Skipper Eric James Leitzke' })).toBeDefined();
+    expect(screen.getByText(/This is a self-funded mission/)).toBeDefined();
   });
 
   it('shows health and donation caveats with source links', () => {
@@ -86,6 +93,8 @@ describe('HomePage', () => {
         .getByRole('link', { name: /World Health Organization: Household air pollution/ })
         .getAttribute('href'),
     ).toBe('https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health');
-    expect(screen.getByText(/do not establish tax-exempt recognition/)).toBeDefined();
+    expect(
+      screen.getByText(/Tax-exempt status and donation deductibility have not been confirmed/),
+    ).toBeDefined();
   });
 });

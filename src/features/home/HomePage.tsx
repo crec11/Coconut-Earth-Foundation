@@ -66,16 +66,16 @@ const supportAreas = [
 
 const progressItems = [
   {
-    status: 'Reported by founders',
+    status: 'In development',
     title: 'Thailand eco-factory',
     description:
-      'The founders report funding the Thailand factory initiative. Its operating model and current readiness should be confirmed as the program develops.',
+      'The Thailand factory is part of this self-funded mission. Its operating model and current readiness need confirmation as the program develops.',
   },
   {
     status: 'In progress',
     title: 'Gas handling and recovery',
     description:
-      'Construction and testing are underway. Commissioning and independent emissions results are not presented as complete.',
+      'Construction and testing are underway. Commissioning status and independent emissions results still need confirmation.',
   },
   {
     status: 'Proposed',
@@ -180,8 +180,8 @@ function TabPanelContent({
               </article>
             </div>
             <p className="founder-note">
-              The founders report self-funding the mission and intend the majority of incoming
-              support to advance it under approved budgets.
+              This is a self-funded mission. The majority of incoming support is intended to advance
+              it under approved budgets.
             </p>
           </Disclosure>
         </>
@@ -256,10 +256,10 @@ function TabPanelContent({
         <>
           <PanelIntro
             eyebrow="Current activity and plans"
-            title="Separate what is reported from what is proposed."
+            title="See what is underway—and what is still planned."
           >
-            Some work is founder-reported or in progress; other activities are still proposed.
-            Status labels help distinguish them.
+            Construction and testing are underway in Thailand; California greenhouse, nursery, and
+            restoration work remains proposed. Status labels distinguish active work from plans.
           </PanelIntro>
           <div className="progress-grid">
             {progressItems.map((item) => (
@@ -288,8 +288,8 @@ function TabPanelContent({
       return (
         <>
           <PanelIntro eyebrow="How we will measure success" title="Progress should be verifiable.">
-            The brief identifies practical measures, not promised outcomes. Results should be
-            documented as the work advances.
+            We focus on practical measures, not promised outcomes. We will document results as the
+            work advances.
           </PanelIntro>
           <ul className="measure-grid">
             {impactMeasures.map((measure, index) => (
@@ -326,8 +326,8 @@ function TabPanelContent({
           <Disclosure summary="Restoration and research safeguards">
             <p>
               Proposed nursery and soil pilots could study tree growth and survival, coconut
-              genetics, and climate adaptation. No experiments or successful adaptations are
-              presented as complete.
+              genetics, and climate adaptation. Research findings and successful adaptations are not
+              yet established.
             </p>
             <p>
               Planting plans should be developed with willing local partners on suitable land, with
@@ -486,8 +486,7 @@ function TabPanelContent({
             </ul>
           </Disclosure>
           <p className="tax-status-note">
-            The supplied materials do not establish tax-exempt recognition or donation
-            deductibility.
+            Tax-exempt status and donation deductibility have not been confirmed.
           </p>
           <button className="primary-button" type="button" onClick={() => onSelectTab('support')}>
             Explore where support can help
