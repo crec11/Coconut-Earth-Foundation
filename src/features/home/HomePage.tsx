@@ -208,8 +208,8 @@ function TabPanelContent({
             <p className="eyebrow">An invitation to partner</p>
             <p>
               Ask Coconut Earth Foundation for a project-specific scope, budget, timeline, and
-              reporting plan. The goal is to demonstrate a better model—and help others improve
-              upon it.
+              reporting plan. The goal is to demonstrate a better model—and help others improve upon
+              it.
             </p>
           </div>
         </>
