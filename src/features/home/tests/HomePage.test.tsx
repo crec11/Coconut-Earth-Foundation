@@ -13,6 +13,7 @@ describe('HomePage', () => {
       name: /Protect forests\. ?Share what works\./,
     });
     expect(heroHeading.querySelector('br')).not.toBeNull();
+    expect(screen.queryByRole('button', { name: /Where donor support can help/ })).toBeNull();
     expect(screen.getByRole('tab', { name: 'Overview' }).getAttribute('aria-selected')).toBe(
       'true',
     );

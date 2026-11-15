@@ -100,7 +100,6 @@
   line-height: 1.65;
 }
 
-.hero-button,
 .primary-button {
   display: inline-flex;
   min-height: 2.9rem;
@@ -122,13 +121,11 @@
     transform 160ms ease;
 }
 
-.hero-button:hover,
 .primary-button:hover {
   transform: translateY(-1px);
   background: #f3bfd0;
 }
 
-.hero-button:focus-visible,
 .primary-button:focus-visible,
 .text-button:focus-visible,
 .footer-link:focus-visible,

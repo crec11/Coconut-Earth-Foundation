@@ -1,10 +1,6 @@
 import coconutCanopy from '../../../assets/coconut-canopy.jpg';
 
-interface HomeHeroProps {
-  onSupportClick: () => void;
-}
-
-export function HomeHero({ onSupportClick }: HomeHeroProps) {
+export function HomeHero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-copy">
@@ -17,9 +13,6 @@ export function HomeHero({ onSupportClick }: HomeHeroProps) {
         <p className="hero-description">
           Starting in Thailand and built for responsible global replication.
         </p>
-        <button className="hero-button" type="button" onClick={onSupportClick}>
-          Where donor support can help <span aria-hidden="true">↓</span>
-        </button>
       </div>
       <div className="hero-image">
         <img

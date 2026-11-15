@@ -14,7 +14,7 @@ export function HomePage() {
     <div className="site-shell">
       <HomeHeader />
       <main id="home">
-        <HomeHero onSupportClick={() => setActiveTab('support')} />
+        <HomeHero />
         <HomeInformation activeTab={activeTab} onSelectTab={setActiveTab} />
       </main>
       <HomeFooter onDueDiligenceClick={() => setActiveTab('due-diligence')} />
